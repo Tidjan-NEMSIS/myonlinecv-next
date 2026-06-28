@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* ============================================================
+   SamaCv — Global Design System
+   Design tokens, utilities, shared components
+   ============================================================ */
+
+/* ===== CSS CUSTOM PROPERTIES (DESIGN TOKENS) ===== */
+@theme {
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-accent2: var(--accent2);
+
+  /* shadcn-compatible tokens for UI components */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border-color);
+
+  /* animate-in support */
+  --animate-in: enter 0.7s ease both;
+}
+
+:root {
+  /* — Theme colors (overridden per user) — */
+  --primary: #1a3a5c;
+  --accent: #c9a84c;
+  --accent2: #e8c97a;
+
+  /* — Derived colors — */
+  --primary-light: color-mix(in srgb, var(--primary) 85%, white);
+  --primary-dark: color-mix(in srgb, var(--primary) 100%, black 15%);
+  --accent-light: color-mix(in srgb, var(--accent) 40%, white);
+  --accent-glow: color-mix(in srgb, var(--accent) 20%, transparent);
+
+  /* — Neutral palette — */
+  --bg-body: #f0f2f5;
+  --bg-card: #ffffff;
+  --bg-elevated: #fafbfc;
+  --bg-muted: #f7f8fa;
+  --border: #e2e8f0;
+  --border-light: #edf2f7;
+
+  /* — shadcn-compatible tokens — */
+  --background: #ffffff;
+  --foreground: #1a202c;
+  -
+<truncated 8593 bytes>
+
+  50% { transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-fade-in { animation: fadeIn 0.5s ease both; }
+.animate-fade-in-up { animation: fadeInUp 0.5s var(--ease-out) both; }
+.animate-fade-in-down { animation: fadeInDown 0.5s var(--ease-out) both; }
+.animate-scale-in { animation: scaleIn 0.4s var(--ease-out) both; }
+
+/* Staggered animations */
+.stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger > *:nth-child(2) { animation-delay: 0.1s; }
+.stagger > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger > *:nth-child(4) { animation-delay: 0.2s; }
+.stagger > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger > *:nth-child(6) { animation-delay: 0.3s; }
+.stagger > *:nth-child(7) { animation-delay: 0.35s; }
+.stagger > *:nth-child(8) { animation-delay: 0.4s; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== shadcn animate-in utilities ===== */
+.animate-in {
+  animation: var(--animate-in);
+}
+
+.fade-in-0 {
+  --tw-enter-opacity: 0;
+}
+
+@keyframes enter {
+  from {
+    opacity: var(--tw-enter-opacity, 1);
+    transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0)
+      scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1))
+      rotate(var(--tw-enter-rotate, 0));
+  }
+}
+

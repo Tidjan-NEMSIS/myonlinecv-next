@@ -1,0 +1,295 @@
+/* ===== WAVE TEMPLATE CSS ===== */
+.wave-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 1400px; /* Force page height */
+  background: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+/* TOP HEADER - Dark grey with teal curve */
+.wave-header {
+  position: relative;
+  height: 250px;
+  background-color: #2b2b2b;
+  overflow: hidden;
+}
+
+/* SVG Wave at bottom of header */
+.wave-header svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(1px); /* Prevent 1px gap */
+}
+
+/* Name and Title placed directly inside header */
+.wave-header-content {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 10;
+}
+
+.wave-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Profile Photo */
+.wave-photo-container {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 5px solid white;
+  overflow: hidden;
+  z-index: 20;
+  background: #eee;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.wave-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wave-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: #ccc;
+  background: #f0f0f0;
+}
+
+/* MAIN CONTENT AREA */
+.wave-body {
+  display: flex;
+  flex: 1;
+  padding: 20px 40px 60px;
+  gap: 40px;
+  position: relative;
+  z-index: 10;
+}
+
+/* COLUMNS */
+.wave-left {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.wave-right {
+  width: 68%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* TITLES / HEADERS */
+.wave-section-title {
+  background-color: var(--primary); /* Teal/blue color */
+  color: white;
+  padding: 8px 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* CONTACT LIST */
+.wave-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.wave-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.wave-contact-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+/* SKILLS LIST */
+.wave-skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 5px;
+}
+
+.wave-skill-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.wave-skill-item::before {
+  content: '▪';
+  color: #333;
+  font-size: 1rem;
+}
+
+/* LANGUAGES */
+.wave-lang-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.wave-lang-name {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.wave-lang-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.wave-lang-dot {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.wave-lang-dot.filled {
+  background: var(--primary);
+}
+
+/* EDUCATION LIST */
+.wave-edu-item {
+  margin-bottom: 15px;
+}
+
+.wave-edu-degree {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 3px;
+}
+
+.wave-edu-school {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* JOB TITLE */
+.wave-job-title {
+  text-align: right;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #2b2b2b;
+  margin-bottom: 10px;
+  padding-right: 20px;
+}
+
+/* PROFILE TEXT */
+.wave-profile-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+  text-align: justify;
+}
+
+/* EXPERIENCES */
+.wave-exp-item {
+  margin-bottom: 25px;
+}
+
+.wave-exp-header {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #2b2b2b;
+  margin-bottom: 5px;
+}
+
+.wave-exp-meta {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.wave-exp-tasks {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.wave-exp-tasks li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 5px;
+  color: #444;
+  list-style-type: square;
+}
+
+/* BOTTOM WAVE */
+.wave-footer {
+  position: relative;
+  margin-top: auto;
+  width: 100%;
+  height: 150px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.wave-footer svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(1px);
+}
+
+@media print {
+  .wave-wrapper {
+    box-shadow: none;
+    border-radius: 0;
+  }
+}

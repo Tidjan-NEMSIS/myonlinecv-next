@@ -1,0 +1,349 @@
+/* =============================================
+   Duo CV Template — Two Columns (Turquoise/Dark Gray)
+   ============================================= */
+
+.duo-wrapper {
+  --duo-primary: var(--primary, #1bbca3); /* Uses theme color */
+  --duo-dark: #585d65;    /* Dark gray for left column */
+  --duo-text-dark: #333333;
+  --duo-text-light: #f5f5f5;
+  --duo-bg-light: #ffffff;
+  
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: var(--duo-bg-light);
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  min-height: 297mm;
+  font-size: 10pt;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+.duo-header {
+  background-color: var(--duo-primary);
+  color: #fff;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.duo-header-left {
+  flex: 1;
+}
+
+.duo-name {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+.duo-title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 0 0 15px 0;
+  opacity: 0.9;
+}
+
+.duo-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.85rem;
+}
+
+.duo-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.duo-contact-item i {
+  width: 14px;
+  text-align: center;
+}
+
+/* Photo */
+.duo-photo-container {
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.duo-photo-border {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background: #e0e0e0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.duo-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.duo-photo-placeholder {
+  font-size: 3.5rem;
+  color: #999;
+}
+
+/* ===== MAIN CONTENT ===== */
+.duo-main {
+  display: flex;
+  flex: 1;
+}
+
+/* ===== LEFT COLUMN ===== */
+.duo-left-column {
+  width: 35%;
+  background-color: var(--duo-dark);
+  color: var(--duo-text-light);
+  padding: 30px 25px;
+  border-top-right-radius: 50px; /* Distinctive curved corner from the image */
+  margin-top: -10px;
+  z-index: 10;
+}
+
+.duo-section-left {
+  margin-bottom: 25px;
+}
+
+.duo-section-title-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--duo-primary);
+  color: #fff;
+  padding: 6px 12px 6px 6px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  margin-left: -10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.duo-icon-box {
+  background: #fff;
+  color: var(--duo-primary);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+.duo-profile-text {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  text-align: justify;
+}
+
+/* Left Timeline (Education) */
+.duo-timeline-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 5px;
+}
+
+.duo-timeline-item-left {
+  border-left: 2px solid var(--duo-primary);
+  padding-left: 12px;
+  position: relative;
+}
+
+.duo-timeline-item-left::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--duo-primary);
+}
+
+.duo-timeline-date-left {
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--duo-primary);
+  margin-bottom: 2px;
+}
+
+.duo-timeline-degree {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+
+.duo-timeline-school {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Skills list (dots) */
+.duo-skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.duo-skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.duo-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.duo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.3;
+}
+
+.duo-dot.filled {
+  background-color: var(--duo-primary);
+  opacity: 1;
+}
+
+/* Tags (Expertise) */
+.duo-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.duo-tag {
+  background: rgba(255,255,255,0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+/* ===== RIGHT COLUMN ===== */
+.duo-right-column {
+  width: 65%;
+  padding: 30px 40px;
+  color: var(--duo-text-dark);
+}
+
+.duo-section-right {
+  margin-bottom: 30px;
+}
+
+.duo-section-title-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--duo-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.duo-icon-box-right {
+  background: var(--duo-primary);
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+/* Right Timeline (Experience) */
+.duo-timeline-right {
+  position: relative;
+  border-left: 2px solid #e0e0e0;
+  margin-left: 14px;
+}
+
+.duo-timeline-item-right {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.duo-timeline-marker {
+  position: absolute;
+  left: -8px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--duo-primary);
+}
+
+.duo-timeline-content-right {
+  background: #f9f9f9;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border-left: 4px solid var(--duo-primary);
+}
+
+.duo-exp-role {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--duo-text-dark);
+  margin-bottom: 4px;
+}
+
+.duo-exp-meta {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+.duo-exp-tasks {
+  margin: 0;
+  padding-left: 16px;
+  list-style-type: disc;
+}
+
+.duo-exp-tasks li {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+/* ===== Print ===== */
+@media print {
+  .duo-wrapper {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    min-height: auto;
+  }
+}

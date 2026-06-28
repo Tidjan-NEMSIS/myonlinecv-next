@@ -1,0 +1,319 @@
+/* =============================================
+   Vivid CV Template — Organic Blobs & Rounded Shapes
+   ============================================= */
+
+.vivid-wrapper {
+  --vivid-primary: var(--primary, #2ba5b5);
+  --vivid-accent: var(--accent, #e87461);
+  --vivid-accent2: var(--accent2, var(--vivid-accent));
+  --vivid-bg: #ffffff;
+  --vivid-text: #333333;
+  --vivid-text-muted: #718096;
+  --vivid-light-bg: #f7f9fc;
+
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: var(--vivid-bg);
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  min-height: 297mm;
+  font-size: 10pt;
+  line-height: 1.5;
+  position: relative;
+}
+
+/* ===== Decorative blob shapes ===== */
+.vivid-blob {
+  position: absolute;
+  border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+.vivid-blob-1 {
+  width: 320px;
+  height: 340px;
+  top: -40px;
+  left: -80px;
+  background: var(--vivid-accent);
+  opacity: 0.18;
+}
+.vivid-blob-2 {
+  width: 200px;
+  height: 200px;
+  bottom: 60px;
+  right: -50px;
+  background: var(--vivid-primary);
+  opacity: 0.12;
+  border-radius: 40% 50% 60% 40% / 60% 40% 50% 50%;
+}
+.vivid-blob-3 {
+  width: 140px;
+  height: 140px;
+  top: 160px;
+  right: 30px;
+  background: var(--vivid-accent);
+  opacity: 0.10;
+  border-radius: 60% 40% 50% 50% / 50% 50% 40% 60%;
+}
+
+/* ===== HEADER ===== */
+.vivid-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 30px 30px 20px 30px;
+}
+
+.vivid-photo-area {
+  flex-shrink: 0;
+}
+.vivid-photo-frame {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--vivid-accent);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+  cursor: pointer;
+  background: var(--vivid-light-bg);
+}
+.vivid-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.vivid-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  color: var(--vivid-text-muted);
+  background: var(--vivid-light-bg);
+}
+
+.vivid-name-block {
+  flex: 1;
+  padding-top: 10px;
+}
+.vivid-firstname {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--vivid-text);
+  letter-spacing: 0.02em;
+  margin: 0;
+  line-height: 1.1;
+}
+.vivid-lastname {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--vivid-text);
+  letter-spacing: 0.03em;
+  margin: 0 0 6px 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.vivid-title-badge {
+  display: inline-block;
+  padding: 5px 18px;
+  border-radius: 20px;
+  background: var(--vivid-primary);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.vivid-main {
+  display: flex;
+  gap: 0;
+  position: relative;
+  z-index: 1;
+}
+.vivid-left {
+  width: 38%;
+  padding: 10px 20px 30px 30px;
+}
+.vivid-right {
+  width: 62%;
+  padding: 10px 30px 30px 20px;
+}
+
+/* ===== SECTION TITLES ===== */
+.vivid-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  margin-top: 18px;
+}
+.vivid-section-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--vivid-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.82rem;
+  flex-shrink: 0;
+}
+.vivid-section-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--vivid-primary);
+}
+
+/* ===== CONTACT (left) ===== */
+.vivid-contact-block {
+  background: var(--vivid-primary);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.vivid-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  margin-bottom: 8px;
+  color: rgba(255,255,255,0.92);
+}
+.vivid-contact-item:last-child {
+  margin-bottom: 0;
+}
+.vivid-contact-item i {
+  font-size: 0.82rem;
+  width: 16px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* ===== SKILLS (dots) ===== */
+.vivid-skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.vivid-skill-name {
+  font-size: 0.8rem;
+  color: var(--vivid-text);
+  font-weight: 500;
+}
+.vivid-dots {
+  display: flex;
+  gap: 4px;
+}
+.vivid-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e2e8f0;
+}
+.vivid-dot.filled {
+  background: var(--vivid-accent);
+}
+
+/* ===== TAGS (expertise) ===== */
+.vivid-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.vivid-tag {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 15px;
+  background: rgba(0,0,0,0.04);
+  border: 1px solid var(--vivid-primary);
+  color: var(--vivid-primary);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+/* ===== PROFILE (right) ===== */
+.vivid-profile-text {
+  font-size: 0.82rem;
+  color: var(--vivid-text-muted);
+  line-height: 1.65;
+  margin-bottom: 6px;
+}
+
+/* ===== TIMELINE (experience / education) ===== */
+.vivid-timeline {
+  position: relative;
+  padding-left: 18px;
+  border-left: 2px solid var(--vivid-primary);
+}
+.vivid-timeline-item {
+  position: relative;
+  margin-bottom: 16px;
+  padding-left: 6px;
+}
+.vivid-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -23px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--vivid-accent);
+  border: 2px solid #fff;
+}
+.vivid-tl-role {
+  font-weight: 700;
+  font-size: 0.84rem;
+  color: var(--vivid-text);
+}
+.vivid-tl-meta {
+  font-size: 0.72rem;
+  color: var(--vivid-primary);
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.vivid-tl-tasks {
+  list-style: disc;
+  padding-left: 16px;
+  margin: 4px 0 0 0;
+}
+.vivid-tl-tasks li {
+  font-size: 0.76rem;
+  color: var(--vivid-text-muted);
+  margin-bottom: 2px;
+}
+
+/* ===== BAILLEURS (left list) ===== */
+.vivid-bailleurs-list {
+  list-style: disc;
+  padding-left: 16px;
+}
+.vivid-bailleurs-list li {
+  font-size: 0.78rem;
+  color: var(--vivid-text);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+/* ===== RESPONSIVE / PRINT ===== */
+@media print {
+  .vivid-wrapper {
+    min-height: auto;
+    box-shadow: none;
+  }
+  .vivid-blob {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

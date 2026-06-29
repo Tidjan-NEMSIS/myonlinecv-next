@@ -729,14 +729,6 @@ ul, ol {
     max-width: none !important;
     min-width: 210mm !important;
   }
-
-  /* Reset for public CV page where native desktop viewport is forced */
-  .no-scale-page #cv-render-area > div {
-    zoom: 1 !important;
-    -moz-transform: none !important;
-    width: 100% !important;
-    min-width: 0 !important;
-  }
 }
 @media print {
   #cv-render-area > div {

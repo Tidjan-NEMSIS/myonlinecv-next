@@ -57,8 +57,11 @@ export default function CvExportBar({ cvData }: Props) {
     if (!element) return null;
 
     // 1. Inline CSS variables for html2canvas compatibility
-    const wrapper = element.querySelector('.cv-wrapper') as HTMLElement | null;
-    if (wrapper) inlineCssVars(wrapper);
+    const wrapper = element.querySelector('.cv-wrapper, .duo-wrapper, .elegant-wrapper, .simplex-wrapper, .vivid-wrapper, .wave-wrapper') as HTMLElement | null;
+    if (wrapper) {
+      inlineCssVars(wrapper);
+      wrapper.classList.add('no-scale'); // Disable zoom for export
+    }
 
     // 2. Disable animations to avoid opacity:0 captures
     const originalStyle = disableAnimations(element);
@@ -69,6 +72,7 @@ export default function CvExportBar({ cvData }: Props) {
     try {
       const canvas = await html2canvas(element, {
         scale: 2,
+        windowWidth: 1024,
         useCORS: true,
         allowTaint: true,
         backgroundColor: '#ffffff',
@@ -113,6 +117,7 @@ export default function CvExportBar({ cvData }: Props) {
       return canvas;
     } finally {
       restoreAnimations(element, originalStyle);
+      if (wrapper) wrapper.classList.remove('no-scale');
     }
   };
 

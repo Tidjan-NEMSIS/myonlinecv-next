@@ -704,3 +704,43 @@ ul, ol {
   background-color: #c53030;
   box-shadow: 0 6px 20px rgba(229, 62, 62, 0.35);
 }
+
+/* ===== CV RESPONSIVE SCALING ===== */
+/* Instead of breaking the layout, we scale it down on small screens to look exactly like the desktop version */
+@media screen and (max-width: 1150px) {
+  #cv-render-area > .cv-wrapper:not(.no-scale),
+  #cv-render-area > .elegant-wrapper:not(.no-scale),
+  #cv-render-area > .wave-wrapper:not(.no-scale) {
+    zoom: calc(100vw / 1150);
+    -moz-transform: scale(calc(100vw / 1150));
+    -moz-transform-origin: top center;
+    width: 1100px !important;
+    max-width: none !important;
+    min-width: 1100px !important;
+  }
+
+  #cv-render-area > .duo-wrapper:not(.no-scale),
+  #cv-render-area > .simplex-wrapper:not(.no-scale),
+  #cv-render-area > .vivid-wrapper:not(.no-scale) {
+    zoom: calc(100vw / 850); /* 210mm is roughly 794px, plus some margin */
+    -moz-transform: scale(calc(100vw / 850));
+    -moz-transform-origin: top center;
+    width: 210mm !important;
+    max-width: none !important;
+    min-width: 210mm !important;
+  }
+
+  /* Reset for public CV page where native desktop viewport is forced */
+  .no-scale-page #cv-render-area > div {
+    zoom: 1 !important;
+    -moz-transform: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+@media print {
+  #cv-render-area > div {
+    zoom: 1 !important;
+    -moz-transform: none !important;
+  }
+}

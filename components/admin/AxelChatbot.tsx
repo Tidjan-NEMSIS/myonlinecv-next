@@ -536,15 +536,18 @@ export default function AxelChatbot({
     <div className="fixed bottom-6 right-6 z-[110]">
       {/* ── CHAT WINDOW ── */}
       <div
-        className={`absolute bottom-20 right-0 w-80 sm:w-[420px] bg-white/95 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/60 transition-all origin-bottom-right flex flex-col overflow-hidden ${
+        className={`fixed md:absolute inset-0 md:inset-auto md:bottom-20 md:right-0 w-full md:w-[420px] h-[100dvh] md:h-[560px] md:max-h-[calc(100vh-120px)] bg-white/95 backdrop-blur-2xl rounded-none md:rounded-3xl shadow-2xl border border-white/60 transition-all origin-bottom-right flex flex-col overflow-hidden z-[111] ${
           isOpen ? 'scale-100 opacity-100 pointer-events-auto' : 'scale-0 opacity-0 pointer-events-none'
         } ${isDragging ? 'duration-0' : 'duration-500'}`}
-        style={{ height: '560px', maxHeight: 'calc(100vh - 120px)', transform: isOpen ? `translate(${position.x}px, ${position.y}px) scale(1)` : `translate(${position.x}px, ${position.y}px) scale(0)` }}
+        style={typeof window !== 'undefined' && window.innerWidth > 768 ? { transform: isOpen ? `translate(${position.x}px, ${position.y}px) scale(1)` : `translate(${position.x}px, ${position.y}px) scale(0)` } : { transform: isOpen ? 'scale(1)' : 'scale(0)' }}
       >
         {/* ── HEADER (DRAGGABLE) ── */}
         <div 
-          className="h-16 bg-gradient-to-r from-[var(--primary)] to-[#1a3a5c] flex items-center justify-between px-5 shrink-0 cursor-move select-none"
-          onPointerDown={handlePointerDown}
+          className="h-16 bg-gradient-to-r from-[var(--primary)] to-[#1a3a5c] flex items-center justify-between px-5 shrink-0 md:cursor-move select-none"
+          onPointerDown={(e) => {
+            if (typeof window !== 'undefined' && window.innerWidth <= 768) return;
+            handlePointerDown(e);
+          }}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerUp}

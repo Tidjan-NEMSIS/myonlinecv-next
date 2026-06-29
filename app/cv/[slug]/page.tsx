@@ -2,7 +2,11 @@ import React from 'react';
 import { getCvBySlug } from '@/lib/firestore';
 import { notFound } from 'next/navigation';
 import CvRoot from '@/components/cv/CvRoot';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
+
+export const viewport: Viewport = {
+  width: 1100, // Force desktop version on mobile
+};
 
 interface Props {
   params: Promise<{
@@ -71,7 +75,7 @@ export default async function PublicCvPage({ params }: Props) {
 
   // CvRoot est un Client Component qui gère l'état et l'interactivité
   return (
-    <div className="min-h-screen bg-[#f0f2f5]">
+    <div className="min-h-screen bg-[#f0f2f5] no-scale-page">
       <CvRoot cvData={data.cvData} profile={data.profile} />
     </div>
   );

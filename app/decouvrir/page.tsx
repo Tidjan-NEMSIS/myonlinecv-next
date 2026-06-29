@@ -158,7 +158,7 @@ export default function DecouvrirPage() {
                 {/* Increased max height for carousel to take advantage of row layout */}
                 <div className="bg-[#e2e8f0] p-4 flex justify-center items-center h-[70vh] max-h-[800px] min-h-[400px]">
                   {/* Robust SVG scale wrapper for the CV */}
-                  <div className="h-full relative shadow-xl rounded-lg overflow-hidden transition-all duration-500 ease-in-out" style={{ aspectRatio: '11/14' }}>
+                  <div className="h-full max-w-full max-h-full relative shadow-xl rounded-lg overflow-hidden transition-all duration-500 ease-in-out" style={{ aspectRatio: '11/14' }}>
                     <svg viewBox="0 0 1100 1400" className="w-full h-full pointer-events-none absolute inset-0 bg-white" preserveAspectRatio="xMidYMid meet">
                       <foreignObject width="1100" height="1400">
                         <div className="w-[1100px] h-[1400px] bg-white origin-top-left pointer-events-auto">
